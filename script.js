@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const activityGalleries = {
         tfbo: {
             title: 'TFBO 2026',
-            images: ['tfbo-1.jpg', 'tfbo-2.jpg', 'tfbo-3.jpg']
+            images: ['tfbo-1.jpg', 'tfbo-2.jpg', 'tfbo-3.jpg', 'tfbo-4.JGP', 'tfbo-5.JGP', 'tfbo-6.JGP', 'tfbo-7.JGP', 'tfbo-8.JGP', 'tfbo-9.JGP', 'tfbo-10.JGP']
         },
         expo: {
             title: 'Expo 2026',
