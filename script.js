@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
                 dbd: {
             title: 'DBD RoadShow Central Rayong',
-            images: ['dbdry-1.jpg', 'dbdry-2.jpg', 'dbdry-3.jpg', 'dbdry-4.jpg', 'dbdry-5.jpg', 'dbdry-6.jpg', 'dbdry-7.jpg']
+            images: ['dbd-1.jpg', 'dbd-2.jpg', 'dbd-3.jpg']
         },
 
 
@@ -167,29 +167,85 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.key === 'Escape' && !galleryDialog?.hidden) closeGallery();
     });
 
-    // --- Form Submission Handling ---
+    // --- Franchise Lead Form -> Vercel API -> Google Sheet ---
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        const packageSelect = document.getElementById('package');
+
+        // Keep the contact form aligned with the current franchise packages.
+        if (packageSelect) {
+            packageSelect.innerHTML = `
+                <option value="STARTER - 190,000 บาท">STARTER - 190,000 บาท</option>
+                <option value="SIZE M - 435,000 บาท">SIZE M - 435,000 บาท</option>
+                <option value="SIZE L - 650,000 บาท">SIZE L - 650,000 บาท</option>
+                <option value="ยังไม่แน่ใจ ต้องการคำปรึกษา">ยังไม่แน่ใจ ต้องการคำปรึกษา</option>
+            `;
+        }
+
+        // Honeypot field: invisible to normal visitors, useful against simple form bots.
+        const honeypot = document.createElement('input');
+        honeypot.type = 'text';
+        honeypot.name = 'website';
+        honeypot.autocomplete = 'off';
+        honeypot.tabIndex = -1;
+        honeypot.setAttribute('aria-hidden', 'true');
+        honeypot.style.position = 'absolute';
+        honeypot.style.left = '-10000px';
+        honeypot.style.width = '1px';
+        honeypot.style.height = '1px';
+        contactForm.appendChild(honeypot);
+
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+
             const btn = contactForm.querySelector('button[type="submit"]');
+            if (!btn) return;
+
             const originalText = btn.innerHTML;
-            
-            // Loading state
+            const name = document.getElementById('name')?.value.trim() || '';
+            const phone = document.getElementById('phone')?.value.trim() || '';
+            const location = document.getElementById('location')?.value.trim() || '';
+            const packageName = packageSelect?.value || '';
+
+            if (!name || !phone || !location) {
+                btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> กรุณากรอกข้อมูลให้ครบ';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                }, 2500);
+                return;
+            }
+
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> กำลังส่งข้อมูล...';
             btn.style.opacity = '0.8';
             btn.disabled = true;
 
-            // Simulate API call
-            setTimeout(() => {
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name,
+                        phone,
+                        location,
+                        packageName,
+                        message: '',
+                        website: honeypot.value
+                    })
+                });
+
+                const result = await response.json().catch(() => ({}));
+
+                if (!response.ok || !result.success) {
+                    throw new Error(result.message || 'Unable to submit lead');
+                }
+
                 btn.innerHTML = '<i class="fas fa-check"></i> ส่งข้อมูลสำเร็จ!';
                 btn.style.backgroundColor = '#28a745';
                 btn.style.borderColor = '#28a745';
-                
-                // Reset form
                 contactForm.reset();
 
-                // Revert button after 3 seconds
                 setTimeout(() => {
                     btn.innerHTML = originalText;
                     btn.style.backgroundColor = '';
@@ -197,7 +253,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     btn.style.opacity = '1';
                     btn.disabled = false;
                 }, 3000);
-            }, 1500);
+            } catch (error) {
+                console.error('Lead submission failed:', error);
+                btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> ส่งไม่สำเร็จ กรุณาลองอีกครั้ง';
+                btn.style.opacity = '1';
+                btn.disabled = false;
+
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                }, 3500);
+            }
         });
     }
 });
