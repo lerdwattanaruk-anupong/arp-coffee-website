@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
                 dbd: {
             title: 'DBD RoadShow Central Rayong',
-            images: ['dbd-1.jpg', 'dbd-2.jpg', 'dbd-3.jpg']
+            images: ['dbdry-1.jpg', 'dbdry-2.jpg', 'dbdry-3.jpg', 'dbdry-4.jpg', 'dbdry-5.jpg', 'dbdry-6.jpg', 'dbdry-7.jpg']
         },
 
 
