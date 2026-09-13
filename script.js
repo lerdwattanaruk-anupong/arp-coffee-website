@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         expo: {
             title: 'Expo 2026',
-            images: ['expo-1.jpg', 'expo-2.jpg', 'expo-3.jpg', 'expo-4.jpg', 'expo-5.jpg']
+            images: ['expo-1.jpg', 'expo-2.jpg', 'expo-3.jpg', 'expo-4.JPG', 'expo-5.JPG']
         },
         gsb: {
             title: 'GSB Franchise Standard 2026',
