@@ -125,10 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'DBD รุ่น 29',
             images: ['dbd-1.jpg', 'dbd-2.jpg', 'dbd-3.jpg']
         },
-        ekkamai: {
-            title: 'ออกบูธย่านเอกมัย',
-            images: ['ekkamai-1.jpg', 'ekkamai-2.jpg', 'ekkamai-3.jpg']
-        }
+
     };
 
     const galleryDialog = document.getElementById('galleryDialog');
