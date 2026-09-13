@@ -16,6 +16,7 @@
     --gray-light: #e9ecef;
     --soft-beige: #DED1BD;
     --warm-taupe: #9C8A7C;
+    --coffee-brown: #6B4A36;
     
     /* Typography */
     --font-heading: 'Kanit', sans-serif;
@@ -342,11 +343,28 @@ img {
     gap: 15px;
 }
 
-/* --- About Section --- */
+/* --- About / Brand Story Section --- */
+.about {
+    position: relative;
+    overflow: hidden;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    right: -100px;
+    top: 72px;
+    border: 1px solid rgba(180, 76, 46, 0.10);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
 .about-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+    gap: 58px;
     align-items: center;
 }
 
@@ -355,70 +373,107 @@ img {
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: var(--shadow);
+    background: var(--light);
 }
 
 .about-image img {
     width: 100%;
-    height: 560px;
+    height: 610px;
     object-fit: cover;
-    object-position: center 68%;
+    object-position: center 48%;
     transition: transform 0.5s ease;
 }
 
 .about-image:hover img {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
-.experience-badge {
+.arp-origin-badge {
     position: absolute;
-    bottom: -20px;
-    right: -20px;
-    background-color: var(--primary);
-    color: var(--white);
-    padding: 20px;
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 10px 20px rgba(203, 90, 61, 0.4);
-    border: 5px solid var(--white);
+    left: 22px;
+    bottom: 22px;
+    min-width: 210px;
+    padding: 15px 18px;
+    background: rgba(247, 244, 238, .94);
+    color: var(--dark);
+    border: 1px solid rgba(180, 76, 46, .25);
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(47, 36, 31, .16);
+    backdrop-filter: blur(8px);
 }
 
-.experience-badge .number {
-    font-size: 1.8rem;
+.arp-origin-badge::after {
+    content: '';
+    position: absolute;
+    width: 42px;
+    height: 1px;
+    right: -26px;
+    top: 26px;
+    background: var(--primary);
+    transform: rotate(-18deg);
+    transform-origin: left center;
+}
+
+.arp-origin-badge code {
+    display: block;
+    color: var(--primary);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 1.15rem;
     font-weight: 700;
-    font-family: var(--font-heading);
-    line-height: 1;
+    margin-bottom: 2px;
 }
 
-.experience-badge .text {
-    font-size: 0.8rem;
-    text-align: center;
+.arp-origin-badge span {
+    display: block;
+    font-size: .82rem;
+    color: var(--coffee-brown);
 }
 
-.about-text .section-title::after {
+.about .section-kicker,
+.why-arp .section-kicker {
+    color: var(--primary);
+}
+
+.about-text .section-title::after,
+.why-arp-content .section-title::after {
     left: 0;
     transform: none;
 }
 
-.feature-list {
-    margin-top: 1.5rem;
+.about-text > p {
+    color: var(--coffee-brown);
+    line-height: 1.9;
 }
 
-.feature-list li {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
+.brand-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    font-weight: 500;
+    margin-top: 24px;
 }
 
-.feature-list i {
+.brand-pillar {
+    padding: 14px 12px;
+    background: var(--light);
+    border: 1px solid rgba(180, 76, 46, .16);
+    border-radius: 10px;
+}
+
+.brand-pillar strong,
+.brand-pillar span {
+    display: block;
+}
+
+.brand-pillar strong {
     color: var(--primary);
-    font-size: 1.2rem;
+    font-family: var(--font-heading);
+    font-size: .95rem;
+}
+
+.brand-pillar span {
+    color: var(--coffee-brown);
+    font-size: .78rem;
+    margin-top: 2px;
 }
 
 /* --- Signature Menu Section --- */
@@ -456,6 +511,62 @@ img {
     font-size: 1.08rem;
     line-height: 1.9;
     color: var(--dark);
+}
+
+/* --- Why ARP Franchise Section --- */
+.why-arp-grid {
+    display: grid;
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+    gap: 52px;
+    align-items: center;
+    margin-bottom: 70px;
+}
+
+.why-arp-image {
+    overflow: hidden;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    background: var(--white);
+}
+
+.why-arp-image img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform .5s ease;
+}
+
+.why-arp-image:hover img {
+    transform: scale(1.025);
+}
+
+.why-arp-content > p:not(.section-kicker) {
+    color: var(--coffee-brown);
+    line-height: 1.9;
+}
+
+.why-arp-list {
+    display: grid;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.why-arp-list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    color: var(--dark);
+}
+
+.why-arp-list i {
+    color: var(--primary);
+    margin-top: 5px;
+    flex: 0 0 auto;
+}
+
+.benefits-subheading {
+    margin-top: 0;
 }
 
 /* --- Benefits Section --- */
@@ -1049,6 +1160,9 @@ img {
 @media (max-width: 992px) {
     .hero-text h1 { font-size: 3rem; }
     .about-container { grid-template-columns: 1fr; text-align: center; }
+    .why-arp-grid { grid-template-columns: 1fr; text-align: center; gap: 32px; }
+    .why-arp-content .section-title::after { left: 50%; transform: translateX(-50%); }
+    .why-arp-list { text-align: left; max-width: 720px; margin-left: auto; margin-right: auto; }
     .signature-menu-container { grid-template-columns: 1fr; text-align: center; gap: 32px; }
     .signature-menu-text .section-title::after { left: 50%; transform: translateX(-50%); }
     .about-text .section-title::after { left: 50%; transform: translateX(-50%); }
@@ -1064,6 +1178,11 @@ img {
 }
 
 @media (max-width: 768px) {
+    .about-image img { height: 500px; }
+    .arp-origin-badge { left: 14px; bottom: 14px; min-width: 185px; }
+    .brand-pillars { grid-template-columns: 1fr; }
+    .brand-pillar { text-align: left; }
+    .why-arp-image img { height: 360px; }
     .nav-links {
         position: fixed;
         top: 70px;
