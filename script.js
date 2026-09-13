@@ -125,6 +125,12 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'DBD รุ่น 29',
             images: ['dbd-1.jpg', 'dbd-2.jpg', 'dbd-3.jpg']
         },
+                dbd: {
+            title: 'DBD RoadShow Central Rayong',
+            images: ['dbd-1.jpg', 'dbd-2.jpg', 'dbd-3.jpg']
+        },
+
+
 
     };
 
