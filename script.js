@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         gsb: {
             title: 'GSB Franchise Standard 2026',
-            images: ['gsb-1.jpg', 'gsb-2.jpg', 'gsb-3.jpg']
+            images: ['gsb-1.jpg', 'gsb-2.jpg', 'gsb-3.jpg', 'gsb-5.jpg', 'gsb-6.jpg', 'gsb-7.jpg', 'gsb-8.jpg', 'gsb-9.jpg', 'gsb-10.jpg', 'gsb-11.jpg', 'gsb-12.jpg', 'gsb-13.jpg']
         },
         smart: {
             title: 'Smart SME Expo 2025',
