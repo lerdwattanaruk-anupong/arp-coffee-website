@@ -280,7 +280,7 @@ img {
     position: relative;
     height: 100vh;
     min-height: 600px;
-    background-image: url('assets/hero-arp.png');
+    background-image: url('assets/hero-arp.webp');
     background-size: cover;
     background-position: center 44%;
     background-attachment: fixed;
@@ -1032,7 +1032,7 @@ img {
     font-size: 1.2rem;
 }
 
-.contact-item h4 {
+.contact-item h3 {
     margin-bottom: 5px;
     font-size: 1rem;
 }
@@ -1260,10 +1260,10 @@ img {
 .page-hero-content { position: relative; z-index: 1; max-width: 920px; }
 .page-hero h1 { font-size: clamp(2.65rem, 5vw, 4.7rem); max-width: 900px; margin-bottom: 1.25rem; }
 .page-hero p:not(.section-kicker) { max-width: 760px; font-size: 1.12rem; color: rgba(255,255,255,.88); }
-.page-hero-about { background-image: url('/assets/brand-story.JPG'); background-position: center 48%; }
-.page-hero-franchise { background-image: url('/assets/kiosk-arp.png'); }
-.page-hero-menu, .page-hero-signature { background-image: url('/assets/menu/khao-taen-latte.JPG'); background-position: 70% center; }
-.page-hero-branches { background-image: url('/assets/shop-arp.jpg'); }
+.page-hero-about { background-image: url('/assets/brand-story-hero.webp'); background-position: center 48%; }
+.page-hero-franchise { background-image: url('/assets/kiosk-arp.webp'); }
+.page-hero-menu, .page-hero-signature { background-image: url('/assets/menu/khao-taen-latte.webp'); background-position: 70% center; }
+.page-hero-branches { background-image: url('/assets/shop-arp.webp'); }
 
 .breadcrumbs { display: flex; gap: 9px; align-items: center; flex-wrap: wrap; margin-bottom: 30px; color: rgba(255,255,255,.72); font-size: .88rem; }
 .breadcrumbs a:hover { color: var(--white); }

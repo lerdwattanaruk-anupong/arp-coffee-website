@@ -106,31 +106,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const activityGalleries = {
         tfbo: {
             title: 'TFBO 2026',
-            images: ['tfbo-1.jpg', 'tfbo-2.jpg', 'tfbo-3.jpg', 'tfbo-4.JPG', 'tfbo-5.JPG', 'tfbo-6.JPG', 'tfbo-7.JPG', 'tfbo-8.JPG', 'tfbo-9.JPG', 'tfbo-10.JPG']
+            images: ['tfbo-1.webp', 'tfbo-2.webp', 'tfbo-3.webp', 'tfbo-4.webp', 'tfbo-5.webp', 'tfbo-6.webp', 'tfbo-7.webp', 'tfbo-8.webp', 'tfbo-9.webp', 'tfbo-10.webp']
         },
         expo: {
             title: 'Expo 2026',
-            images: ['expo-1.jpg', 'expo-2.jpg', 'expo-3.jpg', 'expo-4.JPG', 'expo-5.JPG']
+            images: ['expo-1.webp', 'expo-2.webp', 'expo-3.webp', 'expo-4.webp', 'expo-5.webp']
         },
         gsb: {
             title: 'GSB Franchise Standard 2026',
-            images: ['gsb-1.jpg', 'gsb-2.jpg', 'gsb-3.jpg', 'gsb-5.jpg', 'gsb-6.jpg', 'gsb-7.jpg', 'gsb-8.jpg', 'gsb-9.jpg', 'gsb-10.jpg', 'gsb-11.jpg', 'gsb-12.jpg', 'gsb-13.jpg']
+            images: ['gsb-1.webp', 'gsb-2.webp', 'gsb-3.webp', 'gsb-5.webp', 'gsb-6.webp', 'gsb-7.webp', 'gsb-8.webp', 'gsb-9.webp', 'gsb-10.webp', 'gsb-11.webp', 'gsb-12.webp', 'gsb-13.webp']
         },
         smart: {
             title: 'Smart SME Expo 2025',
-            images: ['smart-1.jpg', 'smart-2.jpg', 'smart-3.jpg']
+            images: ['smart-1.webp', 'smart-2.webp', 'smart-3.webp']
         },
         rich: {
             title: 'งานชี้ช่องรวย',
-            images: ['rich-1.jpg', 'rich-2.jpg', 'rich-3.jpg']
+            images: ['rich-1.webp', 'rich-2.webp', 'rich-3.webp']
         },
-        dbd29: {
+        dbd: {
             title: 'DBD รุ่น 29',
-            images: ['dbd-1.jpg', 'dbd-2.jpg', 'dbd-3.jpg']
+            images: ['dbd-1.webp', 'dbd-2.webp', 'dbd-3.webp']
         },
         dbd: {
             title: 'DBD RoadShow Central Rayong',
-            images: ['dbdry-1.jpg', 'dbdry-2.jpg', 'dbdry-3.jpg', 'dbdry-4.jpg', 'dbdry-5.jpg', 'dbdry-6.jpg', 'dbdry-7.jpg']
+            images: ['dbdry-1.webp', 'dbdry-2.webp', 'dbdry-3.webp', 'dbdry-4.webp', 'dbdry-5.webp', 'dbdry-6.webp', 'dbdry-7.webp']
         },
 
 
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             galleryTitle.textContent = gallery.title;
             galleryImages.innerHTML = gallery.images.map((file, index) =>
-                `<img src="assets/events/${file}" alt="${gallery.title} ภาพที่ ${index + 1}" loading="lazy">`
+                `<img src="assets/events/${file}" alt="${gallery.title} ภาพที่ ${index + 1}" loading="lazy" decoding="async">`
             ).join('');
             galleryDialog.hidden = false;
             document.body.style.overflow = 'hidden';
