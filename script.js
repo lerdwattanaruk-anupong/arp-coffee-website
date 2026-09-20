@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'งานชี้ช่องรวย',
             images: ['rich-1.jpg', 'rich-2.jpg', 'rich-3.jpg']
         },
-        dbd: {
+        dbd29: {
             title: 'DBD รุ่น 29',
             images: ['dbd-1.jpg', 'dbd-2.jpg', 'dbd-3.jpg']
         },
