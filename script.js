@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'งานชี้ช่องรวย',
             images: ['rich-1.webp', 'rich-2.webp', 'rich-3.webp']
         },
-        dbd: {
+        dbd29: {
             title: 'DBD รุ่น 29',
             images: ['dbd-1.webp', 'dbd-2.webp', 'dbd-3.webp']
         },
