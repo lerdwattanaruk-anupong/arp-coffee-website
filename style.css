@@ -1228,3 +1228,86 @@ img {
         display: none;
     }
 }
+
+
+/* =========================================
+   SEO content pages — reuses ARP COFFEE CI
+   ========================================= */
+.seo-inline-link { margin-top: 18px; }
+.seo-inline-link a { color: var(--primary); font-family: var(--font-heading); font-weight: 500; }
+.seo-inline-link a:hover { color: var(--primary-hover); }
+.seo-inline-link i { margin-left: 5px; font-size: .8em; }
+.seo-inline-link-spaced { margin-top: 28px; margin-bottom: 0; }
+
+.seo-page { background: var(--white); }
+.page-hero {
+    position: relative;
+    min-height: 540px;
+    padding: 150px 0 80px;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    background-color: var(--dark);
+    background-size: cover;
+    background-position: center;
+}
+.page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(24,17,14,.94) 0%, rgba(47,36,31,.83) 54%, rgba(47,36,31,.48) 100%);
+}
+.page-hero-content { position: relative; z-index: 1; max-width: 920px; }
+.page-hero h1 { font-size: clamp(2.65rem, 5vw, 4.7rem); max-width: 900px; margin-bottom: 1.25rem; }
+.page-hero p:not(.section-kicker) { max-width: 760px; font-size: 1.12rem; color: rgba(255,255,255,.88); }
+.page-hero-about { background-image: url('/assets/brand-story.JPG'); background-position: center 48%; }
+.page-hero-franchise { background-image: url('/assets/kiosk-arp.png'); }
+.page-hero-menu, .page-hero-signature { background-image: url('/assets/menu/khao-taen-latte.JPG'); background-position: 70% center; }
+.page-hero-branches { background-image: url('/assets/shop-arp.jpg'); }
+
+.breadcrumbs { display: flex; gap: 9px; align-items: center; flex-wrap: wrap; margin-bottom: 30px; color: rgba(255,255,255,.72); font-size: .88rem; }
+.breadcrumbs a:hover { color: var(--white); }
+.breadcrumbs span[aria-hidden="true"] { opacity: .58; }
+
+.seo-two-col { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(0,.95fr); align-items: center; gap: 54px; }
+.seo-two-col p { color: var(--coffee-brown); line-height: 1.9; }
+.seo-two-col .section-title::after { left: 0; transform: none; }
+.seo-image-card { overflow: hidden; border-radius: var(--radius); box-shadow: var(--shadow); background: var(--light); }
+.seo-image-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+
+.seo-card-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 22px; }
+.seo-card-grid-3 { grid-template-columns: repeat(3,1fr); }
+.seo-card { padding: 30px; border: 1px solid rgba(180,76,46,.15); border-radius: var(--radius); background: var(--white); box-shadow: 0 8px 24px rgba(47,36,31,.06); }
+.seo-card > i { color: var(--primary); font-size: 1.65rem; margin-bottom: 18px; }
+.seo-card h2, .seo-card h3 { color: var(--dark); font-size: 1.3rem; }
+.seo-card p { color: var(--coffee-brown); margin-bottom: 0; }
+.location-card a { display: inline-block; margin-top: 18px; color: var(--primary); font-family: var(--font-heading); font-weight: 500; }
+
+.seo-process-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 14px; }
+.seo-process-grid > div { padding: 24px 20px; background: var(--light); border-radius: var(--radius); border-top: 3px solid var(--primary); }
+.seo-process-grid span { color: var(--primary); font-family: var(--font-heading); font-weight: 700; letter-spacing: .08em; }
+.seo-process-grid h3 { margin-top: 12px; font-size: 1.08rem; }
+.seo-process-grid p { color: var(--coffee-brown); font-size: .9rem; margin-bottom: 0; }
+
+.seo-cta { padding: 52px 0; background: var(--dark); color: var(--white); }
+.seo-cta-inner { display: flex; justify-content: space-between; align-items: center; gap: 30px; }
+.seo-cta h2 { margin-bottom: 0; font-size: clamp(1.8rem,3vw,2.7rem); }
+.seo-cta .section-kicker { margin-bottom: 8px; }
+.seo-note { padding: 24px 0; background: var(--light); border-top: 1px solid rgba(180,76,46,.12); border-bottom: 1px solid rgba(180,76,46,.12); }
+.seo-note p { margin-bottom: 0; color: var(--coffee-brown); }
+
+@media (max-width: 992px) {
+    .seo-two-col { grid-template-columns: 1fr; }
+    .seo-card-grid, .seo-card-grid-3 { grid-template-columns: repeat(2,1fr); }
+    .seo-process-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 768px) {
+    .page-hero { min-height: 500px; padding-top: 125px; }
+    .page-hero h1 { font-size: 2.55rem; }
+    .seo-card-grid, .seo-card-grid-3, .seo-process-grid { grid-template-columns: 1fr; }
+    .seo-cta-inner { flex-direction: column; align-items: flex-start; }
+}
+
+.footer-seo-links { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; margin: 8px 0 16px; }
+.footer-seo-links a { color: rgba(255,255,255,.72); font-family: var(--font-heading); font-size: .92rem; }
+.footer-seo-links a:hover { color: var(--white); }

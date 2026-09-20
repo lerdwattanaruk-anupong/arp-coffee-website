@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     
-    hamburger.addEventListener('click', () => {
+    hamburger?.addEventListener('click', () => {
+        if (!navLinks) return;
         navLinks.classList.toggle('active');
         // Toggle hamburger icon between bars and times
         const icon = hamburger.querySelector('i');
@@ -20,8 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close mobile menu when a link is clicked
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            const icon = hamburger.querySelector('i');
+            navLinks?.classList.remove('active');
+            const icon = hamburger?.querySelector('i');
+            if (!icon) return;
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
         });
@@ -34,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
         // Sticky Header
+        if (!navbar) return;
         if (window.scrollY > 50) {
             navbar.style.padding = '10px 0';
             navbar.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
@@ -155,6 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const closeGallery = () => {
+        if (!galleryDialog) return;
         galleryDialog.hidden = true;
         document.body.style.overflow = '';
     };
@@ -164,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.target === galleryDialog) closeGallery();
     });
     document.addEventListener('keydown', event => {
-        if (event.key === 'Escape' && !galleryDialog?.hidden) closeGallery();
+        if (event.key === 'Escape' && galleryDialog && !galleryDialog.hidden) closeGallery();
     });
 
     // --- Franchise Lead Form -> Vercel API -> Google Sheet ---
