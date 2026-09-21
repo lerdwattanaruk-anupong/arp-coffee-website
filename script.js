@@ -14,7 +14,7 @@ const ARP_BRANCHES = [
         province: 'กรุงเทพมหานคร',
         description: 'ARP COFFEE ในพื้นที่พระราม 9 กรุงเทพมหานคร',
         image: '',
-        mapUrl: '',
+        mapUrl: 'https://maps.app.goo.gl/ceH6Q7BjBZvuNct18',
         detailsUrl: '',
         contactUrl: 'https://www.facebook.com/arpcoffee',
         contactLabel: 'ตรวจสอบข้อมูลล่าสุด'
@@ -36,7 +36,7 @@ const ARP_BRANCHES = [
         province: 'กรุงเทพมหานคร',
         description: 'ช่องทางบริการในพื้นที่อนุสาวรีย์ชัยฯ อาจแตกต่างกันตามช่วงเวลา กรุณาตรวจสอบก่อนเดินทางหรือสั่งซื้อ',
         image: '',
-        mapUrl: '',
+        mapUrl: 'https://maps.app.goo.gl/pqvSPBEEwTbaUfKs7',
         detailsUrl: '',
         contactUrl: 'https://lin.ee/732X6ey',
         contactLabel: 'สอบถามผ่าน LINE'
@@ -47,7 +47,7 @@ const ARP_BRANCHES = [
         province: 'สมุทรปราการ',
         description: 'ARP COFFEE สาขาซอยทรัพย์บุญชัย จังหวัดสมุทรปราการ',
         image: '',
-        mapUrl: '',
+        mapUrl: 'https://maps.app.goo.gl/FPS2cpbKpvLCh9c1A',
         detailsUrl: '',
         contactUrl: 'https://www.facebook.com/arpcoffee',
         contactLabel: 'ตรวจสอบข้อมูลล่าสุด'
