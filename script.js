@@ -1,4 +1,99 @@
+// ============================================================
+// ARP COFFEE BRANCH DATA
+// Edit this array when adding/updating a branch.
+// 1) Put the branch image in /assets/branches/
+// 2) Add image: '/assets/branches/your-file.webp'
+// 3) Add the Google Maps short link in mapUrl
+// 4) When a branch detail page is ready, add its URL in detailsUrl
+// See /BRANCH-UPDATE-GUIDE.md for a copy/paste example.
+// ============================================================
+const ARP_BRANCHES = [
+    {
+        slug: 'sv-square-rama-9',
+        name: 'SV Square พระราม 9',
+        province: 'กรุงเทพมหานคร',
+        description: 'ARP COFFEE ในพื้นที่พระราม 9 กรุงเทพมหานคร',
+        image: '',
+        mapUrl: '',
+        detailsUrl: '',
+        contactUrl: 'https://www.facebook.com/arpcoffee',
+        contactLabel: 'ตรวจสอบข้อมูลล่าสุด'
+    },
+    {
+        slug: 'phetchaburi-union-tower',
+        name: 'ถนนเพชรบุรีตัดใหม่',
+        province: 'กรุงเทพมหานคร',
+        description: 'ARP COFFEE บริเวณ Union Tower ถนนเพชรบุรีตัดใหม่ กรุงเทพมหานคร',
+        image: '',
+        mapUrl: '',
+        detailsUrl: '',
+        contactUrl: 'https://www.facebook.com/arpcoffee',
+        contactLabel: 'ตรวจสอบข้อมูลล่าสุด'
+    },
+    {
+        slug: 'victory-monument',
+        name: 'พื้นที่อนุสาวรีย์ชัยฯ',
+        province: 'กรุงเทพมหานคร',
+        description: 'ช่องทางบริการในพื้นที่อนุสาวรีย์ชัยฯ อาจแตกต่างกันตามช่วงเวลา กรุณาตรวจสอบก่อนเดินทางหรือสั่งซื้อ',
+        image: '',
+        mapUrl: '',
+        detailsUrl: '',
+        contactUrl: 'https://lin.ee/732X6ey',
+        contactLabel: 'สอบถามผ่าน LINE'
+    },
+    {
+        slug: 'sap-bun-chai-samut-prakan',
+        name: 'ซอยทรัพย์บุญชัย สมุทรปราการ',
+        province: 'สมุทรปราการ',
+        description: 'ARP COFFEE สาขาซอยทรัพย์บุญชัย จังหวัดสมุทรปราการ',
+        image: '',
+        mapUrl: '',
+        detailsUrl: '',
+        contactUrl: 'https://www.facebook.com/arpcoffee',
+        contactLabel: 'ตรวจสอบข้อมูลล่าสุด'
+    }
+];
+
 document.addEventListener('DOMContentLoaded', () => {
+
+    // --- Branch Cards (data-driven for easy Local SEO updates) ---
+    const branchGrid = document.getElementById('branchGrid');
+    if (branchGrid) {
+        const escapeHtml = (value = '') => String(value)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+
+        branchGrid.innerHTML = ARP_BRANCHES.map(branch => {
+            const imageBlock = branch.image
+                ? `<div class="branch-card-media"><img src="${escapeHtml(branch.image)}" alt="ARP COFFEE ${escapeHtml(branch.name)}" loading="lazy" decoding="async"></div>`
+                : `<div class="branch-card-media branch-card-placeholder" aria-hidden="true"><i class="fas fa-location-dot"></i><span>ARP COFFEE</span></div>`;
+
+            const actions = [];
+            if (branch.detailsUrl) {
+                actions.push(`<a class="branch-btn branch-btn-detail" href="${escapeHtml(branch.detailsUrl)}">ดูรายละเอียดสาขา</a>`);
+            }
+            if (branch.mapUrl) {
+                actions.push(`<a class="branch-btn branch-btn-map" href="${escapeHtml(branch.mapUrl)}" target="_blank" rel="noopener noreferrer" aria-label="นำทางไป ${escapeHtml(branch.name)} ด้วย Google Maps"><i class="fas fa-location-arrow" aria-hidden="true"></i> นำทาง</a>`);
+            }
+            if (branch.contactUrl) {
+                actions.push(`<a class="branch-btn branch-btn-contact" href="${escapeHtml(branch.contactUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(branch.contactLabel || 'สอบถามข้อมูล')}</a>`);
+            }
+
+            return `
+                <article class="seo-card location-card branch-card" data-branch="${escapeHtml(branch.slug)}">
+                    ${imageBlock}
+                    <div class="branch-card-body">
+                        <p class="branch-province"><i class="fas fa-location-dot" aria-hidden="true"></i> ${escapeHtml(branch.province)}</p>
+                        <h3>${escapeHtml(branch.name)}</h3>
+                        <p>${escapeHtml(branch.description)}</p>
+                        <div class="branch-actions">${actions.join('')}</div>
+                    </div>
+                </article>`;
+        }).join('');
+    }
     
     // --- Mobile Menu Toggle ---
     const hamburger = document.querySelector('.hamburger');

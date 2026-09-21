@@ -125,12 +125,17 @@
         <section class="section-padding">
             <div class="container">
                 <div class="section-header text-center"><p class="section-kicker">BANGKOK & SAMUT PRAKAN</p><h2 class="section-title">พื้นที่ที่ค้นหา ARP COFFEE ได้</h2></div>
-                <div class="seo-card-grid seo-card-grid-3">
-                    <article class="seo-card location-card"><i class="fas fa-location-dot"></i><h3>SV Square พระราม 9</h3><p>ARP COFFEE ในพื้นที่พระราม 9 กรุงเทพมหานคร</p><a href="https://www.facebook.com/arpcoffee" target="_blank" rel="noopener noreferrer">ตรวจสอบข้อมูลล่าสุด</a></article>
-                    <article class="seo-card location-card"><i class="fas fa-location-dot"></i><h3>ถนนเพชรบุรีตัดใหม่</h3><p>ARP COFFEE บริเวณ Union Tower ถนนเพชรบุรีตัดใหม่ กรุงเทพมหานคร</p><a href="https://www.facebook.com/arpcoffee" target="_blank" rel="noopener noreferrer">ตรวจสอบข้อมูลล่าสุด</a></article>
-                    <article class="seo-card location-card"><i class="fas fa-location-dot"></i><h3>พื้นที่อนุสาวรีย์ชัยฯ</h3><p>ช่องทางบริการในพื้นที่อนุสาวรีย์ชัยฯ อาจแตกต่างกันตามช่วงเวลา กรุณาตรวจสอบก่อนเดินทางหรือสั่งซื้อ</p><a href="https://lin.ee/732X6ey" target="_blank" rel="noopener noreferrer">สอบถามผ่าน LINE</a></article>
-                    <article class="seo-card location-card"><i class="fas fa-location-dot"></i><h3>ซอยทรัพย์บุญชัย สมุทรปราการ</h3><p>ARP COFFEE สาขาซอยทรัพย์บุญชัย จังหวัดสมุทรปราการ</p><a href="https://www.facebook.com/arpcoffee" target="_blank" rel="noopener noreferrer">ตรวจสอบข้อมูลล่าสุด</a></article>
-                </div>
+                <!-- Branch cards are rendered from ARP_BRANCHES in /script.js.
+                     To add a branch, edit only the data object in script.js and add the image file under /assets/branches/. -->
+                <div class="seo-card-grid seo-card-grid-3 branch-grid" id="branchGrid" aria-live="polite"></div>
+                <noscript>
+                    <div class="seo-card-grid seo-card-grid-3">
+                        <article class="seo-card location-card"><h3>SV Square พระราม 9</h3><p>ARP COFFEE ในพื้นที่พระราม 9 กรุงเทพมหานคร</p></article>
+                        <article class="seo-card location-card"><h3>ถนนเพชรบุรีตัดใหม่</h3><p>ARP COFFEE บริเวณ Union Tower ถนนเพชรบุรีตัดใหม่ กรุงเทพมหานคร</p></article>
+                        <article class="seo-card location-card"><h3>พื้นที่อนุสาวรีย์ชัยฯ</h3><p>ช่องทางบริการในพื้นที่อนุสาวรีย์ชัยฯ กรุณาตรวจสอบข้อมูลล่าสุดก่อนเดินทางหรือสั่งซื้อ</p></article>
+                        <article class="seo-card location-card"><h3>ซอยทรัพย์บุญชัย สมุทรปราการ</h3><p>ARP COFFEE สาขาซอยทรัพย์บุญชัย จังหวัดสมุทรปราการ</p></article>
+                    </div>
+                </noscript>
             </div>
         </section>
         <section class="seo-note"><div class="container"><p><strong>ข้อมูลสาขา:</strong> เวลาเปิด-ปิด จุดให้บริการ และช่องทางเดลิเวอรีสามารถเปลี่ยนแปลงได้ โปรดตรวจสอบกับช่องทางหลักของ ARP COFFEE ก่อนเดินทาง</p></div></section>
@@ -151,6 +156,6 @@
             </div>
         </div>
     </footer>
-    <script src="/script.js?v=3"></script>
+    <script src="/script.js?v=4"></script>
 </body>
 </html>

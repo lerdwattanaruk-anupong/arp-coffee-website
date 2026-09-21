@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TEMPLATE ONLY: เปลี่ยนเป็น index,follow หลังกรอกข้อมูลจริงครบ -->
+    <meta name="robots" content="noindex,nofollow">
+    <title>[[BRANCH_NAME]] | ARP COFFEE</title>
+    <meta name="description" content="[[BRANCH_META_DESCRIPTION]]">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="seo-page">
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo" aria-label="ARP COFFEE หน้าแรก">
+                <img src="/assets/logo-dark.png" alt="ARP COFFEE — Connect To Possibility" width="756" height="756">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">หน้าแรก</a></li>
+                <li><a href="/about/">เกี่ยวกับเรา</a></li>
+                <li><a href="/menu/">เมนู</a></li>
+                <li><a href="/branches/">สาขา</a></li>
+                <li><a href="/franchise/">แฟรนไชส์</a></li>
+                <li><a href="/#contact" class="btn-outline">ติดต่อลงทุน</a></li>
+            </ul>
+            <div class="hamburger" aria-label="เปิดเมนู" role="button" tabindex="0"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="page-hero page-hero-branches">
+            <div class="container page-hero-content">
+                <nav class="breadcrumbs" aria-label="Breadcrumb">
+                    <a href="/">หน้าแรก</a><span aria-hidden="true">›</span>
+                    <a href="/branches/">สาขา</a><span aria-hidden="true">›</span>
+                    <span aria-current="page">[[BRANCH_SHORT_NAME]]</span>
+                </nav>
+                <p class="section-kicker">ARP COFFEE LOCATION</p>
+                <h1>[[BRANCH_NAME]]</h1>
+                <p>[[BRANCH_INTRO]]</p>
+            </div>
+        </header>
+
+        <section class="section-padding">
+            <div class="container seo-two-col">
+                <div class="seo-image-card">
+                    <img src="/assets/branches/[[BRANCH_IMAGE]]" alt="[[BRANCH_IMAGE_ALT]]" loading="eager" decoding="async">
+                </div>
+                <div>
+                    <p class="section-kicker">VISIT ARP COFFEE</p>
+                    <h2 class="section-title">ข้อมูลสาขา</h2>
+                    <p><strong>ที่อยู่:</strong> [[ADDRESS]]</p>
+                    <p><strong>เวลาเปิด:</strong> [[OPENING_HOURS]]</p>
+                    <p><strong>โทร:</strong> [[PHONE]]</p>
+                    <div class="branch-actions">
+                        <a class="branch-btn branch-btn-map" href="[[GOOGLE_MAPS_SHORTLINK]]" target="_blank" rel="noopener noreferrer"><i class="fas fa-location-arrow" aria-hidden="true"></i> นำทางด้วย Google Maps</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="seo-note">
+            <div class="container">
+                <p><strong>ก่อนเดินทาง:</strong> กรุณาตรวจสอบเวลาเปิด-ปิดและข้อมูลล่าสุดของสาขา</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <div class="footer-logo"><a href="/"><img src="/assets/logo-white.png" alt="ARP COFFEE" width="756" height="756"></a></div>
+            <p>&copy; 2026 ARP COFFEE Franchise. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="/script.js?v=4"></script>
+</body>
+</html>
