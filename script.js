@@ -340,6 +340,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     throw new Error(result.message || 'Unable to submit lead');
                 }
 
+                // Count a Google Ads conversion only after the lead API confirms success.
+                // The function is a no-op until the conversion label is added in /google-ads.js.
+                window.trackGoogleAdsFranchiseLead?.();
+
                 btn.innerHTML = '<i class="fas fa-check"></i> ส่งข้อมูลสำเร็จ!';
                 btn.style.backgroundColor = '#28a745';
                 btn.style.borderColor = '#28a745';
