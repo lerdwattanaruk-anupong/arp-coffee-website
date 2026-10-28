@@ -673,3 +673,134 @@
 .catering-portfolio-location i {
     font-size: .82rem;
 }
+
+
+/* =========================================================
+   Merit / Charity Packages
+   ========================================================= */
+.merit-packages {
+    background:
+        radial-gradient(circle at 92% 10%, rgba(228,87,46,.08), transparent 24%),
+        var(--catering-cream);
+}
+
+.merit-package-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.merit-package-card {
+    position: relative;
+    padding: 32px;
+    border: 1px solid rgba(180,76,46,.18);
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(47,36,31,.06);
+}
+
+.merit-package-featured {
+    border-color: var(--catering-terracotta);
+    box-shadow: 0 20px 50px rgba(180,76,46,.12);
+}
+
+.merit-package-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(180,76,46,.12);
+}
+
+.merit-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(228,87,46,.10);
+    color: var(--catering-terracotta);
+    font-family: var(--font-heading);
+    font-size: .82rem;
+    font-weight: 600;
+}
+
+.merit-package-head strong {
+    color: var(--catering-espresso);
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    white-space: nowrap;
+}
+
+.merit-package-head small {
+    font-size: .75rem;
+}
+
+.merit-package-card h3 {
+    margin: 22px 0 4px;
+    color: var(--catering-espresso);
+    font-size: 1.18rem;
+}
+
+.merit-price {
+    margin: 8px 0 18px;
+    color: var(--catering-orange);
+    font-family: var(--font-heading);
+    font-size: 2.55rem;
+    font-weight: 700;
+}
+
+.merit-price small {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.merit-list {
+    display: grid;
+    gap: 8px;
+    margin: 0 0 22px;
+}
+
+.merit-list li {
+    position: relative;
+    padding-left: 20px;
+    color: var(--catering-brown);
+    font-size: .9rem;
+}
+
+.merit-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--catering-terracotta);
+    font-weight: 700;
+}
+
+.merit-condition {
+    max-width: 980px;
+    margin: 30px auto 0;
+    display: flex;
+    gap: 16px;
+    padding: 22px 24px;
+    border: 1px solid var(--catering-beige);
+    border-radius: 16px;
+    background: #fff;
+    color: var(--catering-brown);
+}
+
+.merit-condition i {
+    margin-top: 4px;
+    color: var(--catering-terracotta);
+}
+
+.merit-condition p {
+    margin: 4px 0 0;
+    font-size: .9rem;
+}
+
+@media (max-width: 1000px) {
+    .merit-package-grid {
+        grid-template-columns: 1fr;
+    }
+}
