@@ -14,22 +14,6 @@
     --catering-gold: #B89A6A;
 }
 
-.catering-logo-placeholder {
-    width: 170px;
-    min-height: 48px;
-    display: grid;
-    place-items: center;
-    border: 1px dashed var(--catering-terracotta);
-    border-radius: 10px;
-    color: var(--catering-terracotta);
-    background: var(--catering-cream);
-    font-family: var(--font-heading);
-    font-size: .66rem;
-    font-weight: 600;
-    letter-spacing: .08em;
-    text-align: center;
-}
-
 .catering-hero {
     position: relative;
     overflow: hidden;
@@ -146,45 +130,22 @@
 
 .catering-hero-points i { color: var(--catering-terracotta); }
 
-.catering-photo-placeholder {
+.catering-hero-photo {
+    position: relative;
     min-height: 510px;
-    display: grid;
-    place-items: center;
-    border: 1px dashed rgba(180,76,46,.42);
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid rgba(180,76,46,.18);
     border-radius: 28px 28px 100px 28px;
-    background:
-        linear-gradient(180deg, rgba(255,255,255,.65), rgba(222,209,189,.82)),
-        repeating-linear-gradient(135deg, transparent 0 24px, rgba(180,76,46,.03) 24px 25px);
-    box-shadow: 0 22px 65px rgba(47,36,31,.10);
+    background: var(--catering-beige);
+    box-shadow: 0 22px 65px rgba(47,36,31,.12);
 }
 
-.catering-photo-placeholder > div {
-    max-width: 300px;
-    text-align: center;
-    color: var(--catering-brown);
-}
-
-.catering-photo-placeholder i {
-    display: block;
-    margin-bottom: 16px;
-    color: var(--catering-terracotta);
-    font-size: 2rem;
-}
-
-.catering-photo-placeholder strong,
-.catering-photo-placeholder span {
-    display: block;
-}
-
-.catering-photo-placeholder strong {
-    font-family: var(--font-heading);
-    letter-spacing: .06em;
-}
-
-.catering-photo-placeholder span {
-    margin-top: 8px;
-    font-size: .84rem;
-    color: var(--catering-taupe);
+.catering-hero-photo img {
+    width: 100%;
+    height: 510px;
+    object-fit: cover;
+    object-position: 60% center;
 }
 
 .catering-section-intro {
@@ -603,16 +564,24 @@
 .catering-bottom-cta h2 { margin-bottom: 0; font-size: clamp(1.8rem,3vw,2.8rem); }
 .catering-bottom-cta .section-kicker { color: #e4b9a7; margin-bottom: 7px; }
 
-.catering-footer-logo-placeholder {
-    width: 190px;
+.catering-footer-logo {
+    position: relative;
+    width: 220px;
+    height: 64px;
+    overflow: hidden;
     margin: 0 auto 18px;
-    padding: 14px;
-    border: 1px dashed rgba(255,255,255,.45);
     border-radius: 10px;
-    color: rgba(255,255,255,.75);
-    font-family: var(--font-heading);
-    font-size: .7rem;
-    letter-spacing: .08em;
+    background: var(--catering-cream);
+}
+
+.catering-footer-logo img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 250px;
+    max-width: none;
+    transform: translate(-16px, -94px);
 }
 
 @media (max-width: 1000px) {
@@ -621,7 +590,8 @@
         grid-template-columns: 1fr;
     }
 
-    .catering-photo-placeholder { min-height: 380px; }
+    .catering-hero-photo { min-height: 380px; }
+    .catering-hero-photo img { height: 380px; }
 
     .catering-package-grid,
     .catering-event-grid,
@@ -651,7 +621,8 @@
     .catering-package-card,
     .catering-form { padding: 24px; }
 
-    .catering-photo-placeholder { min-height: 280px; }
+    .catering-hero-photo { min-height: 280px; }
+    .catering-hero-photo img { height: 280px; }
 
     .catering-portfolio-photo { min-height: 240px; }
 
